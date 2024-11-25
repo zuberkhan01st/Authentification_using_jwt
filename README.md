@@ -1,6 +1,6 @@
-# **Intern Project - Web Application**
+# **Web Application**
 
-Welcome to the **Intern Project** repository! This web application is a simple yet powerful example of a full-stack solution with authentication, user management, and dynamic content. The app is built with **Node.js**, **Express.js**, and **MongoDB** for the backend, and **EJS** for the templating engine on the frontend.
+This web application is a simple yet powerful example of a full-stack solution with authentication, user management, and dynamic content. The app is built with **Node.js**, **Express.js**, and **MongoDB** for the backend, and **EJS** for the templating engine on the frontend.
 
 ## **Project Overview**
 
@@ -103,7 +103,7 @@ This will start the server on http://localhost:3000
 
    Open your browser and go to http://localhost:3000 to view the application. You can register a new account or log in with an existing one.
 
-## **roject Structure**
+## **Project Structure**
 Here is the directory structure of the project:
 
 /InternProject
