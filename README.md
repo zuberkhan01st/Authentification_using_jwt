@@ -68,15 +68,6 @@ Before getting started, you will need the following installed:
    Open a terminal and run the following command to clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/your-repository-name.git
-   cd your-repository-name
-    ```
-
-2. 1. **Clone the repository:**
-
-   Open a terminal and run the following command to clone the repository:
-
-   ```bash
    git clone https://github.com/zuberkhan01st/Authentification_using_jwt.git
    cd Authentification_using_jwt
     ```
