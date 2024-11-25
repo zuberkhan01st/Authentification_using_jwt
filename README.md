@@ -1,53 +1,57 @@
-# **Web Application**
+# Web Application
 
-This web application is a simple yet powerful example of a full-stack solution with authentication, user management, and dynamic content. The app is built with **Node.js**, **Express.js**, and **MongoDB** for the backend, and **EJS** for the templating engine on the frontend.
+This web application is a simple yet powerful example of a full-stack solution with authentication, user management, and dynamic content. The app is built with Node.js, Express.js, and MongoDB for the backend, and EJS for the templating engine on the frontend.
 
-## **Project Overview**
+## Project Overview
 
-This project is designed to demonstrate the development of a full-stack web application. It allows users to register, login, and manage their personal data, with role-based access to a dashboard. The system uses **MongoDB** for storing user credentials and data, **EJS** for rendering dynamic HTML views, and **express-session** for session management.
+This project is designed to demonstrate the development of a full-stack web application. It allows users to register, log in, and manage their personal data, with role-based access to a dashboard. The system uses MongoDB for storing user credentials and data, EJS for rendering dynamic HTML views, and JWT tokens for authentication.
 
-## **Key Features**
+## Key Features
 
-- **User Authentication:**
-  - Registration and login functionality.
-  - Password encryption using `bcryptjs` to securely store passwords.
-  - Logout feature for session management.
+### User Authentication:
+- **Registration and login functionality**.
+- Password encryption using `bcryptjs` to securely store passwords.
+- **JWT tokens** for secure session-less authentication.
+- Logout feature for client-side JWT invalidation.
 
-- **Dynamic Dashboard:**
-  - A user-specific dashboard that displays personalized data (e.g., username and role).
-  - Role-based access to the dashboard to differentiate between regular users and admins.
+### Dynamic Dashboard:
+- A user-specific dashboard that displays personalized data (e.g., username and role).
+- Role-based access to the dashboard to differentiate between regular users and admins.
 
-- **Session Management:**
-  - The use of **express-session** to persist user sessions across different pages, ensuring that users remain logged in while browsing.
+### Authentication and Session Management:
+- The use of **JWT tokens** for secure, session-less communication between the client and the server.
+- Persistent user authentication across pages during their active session.
 
-- **Responsive UI:**
-  - The user interface is designed using **EJS** and is responsive, adjusting to various screen sizes for an optimal user experience.
+### Responsive UI:
+- The user interface is designed using **EJS** and is responsive, adjusting to various screen sizes for an optimal user experience.
 
-- **Security:**
-  - All user data is stored securely in MongoDB.
-  - Passwords are hashed using bcryptjs before being stored.
-  - Protected routes and middleware ensure that only authenticated users can access certain parts of the application.
+### Security:
+- All user data is stored securely in **MongoDB**.
+- Passwords are hashed using `bcryptjs` before being stored.
+- JWT ensures secure token-based authentication.
+- Protected routes and middleware ensure that only authenticated users can access certain parts of the application.
 
-- **Simple UI and Clean Design:**
-  - A minimalist design focusing on functionality and ease of use, with clear login, registration, and dashboard pages.
+### Simple UI and Clean Design:
+- A minimalist design focusing on functionality and ease of use, with clear login, registration, and dashboard pages.
 
-## **Technologies Used**
+## Technologies Used
 
-- **Backend:**
-  - **Node.js** – JavaScript runtime for server-side logic.
-  - **Express.js** – Web framework for building routes and handling HTTP requests.
-  - **MongoDB** – NoSQL database for storing user data.
-  - **EJS** – Template engine for dynamic HTML rendering.
-  - **bcryptjs** – Library for hashing passwords.
+### Backend:
+- **Node.js** – JavaScript runtime for server-side logic.
+- **Express.js** – Web framework for building routes and handling HTTP requests.
+- **MongoDB** – NoSQL database for storing user data.
+- **EJS** – Template engine for dynamic HTML rendering.
+- **bcryptjs** – Library for hashing passwords.
+- **jsonwebtoken (JWT)** – For token-based user authentication.
 
-- **Frontend:**
-  - **HTML/CSS** – For creating the structure and style of the web pages.
-  - **JavaScript** – For client-side interactivity.
-  - **EJS** – Templating engine for dynamic views.
+### Frontend:
+- **HTML/CSS** – For creating the structure and style of the web pages.
+- **JavaScript** – For client-side interactivity.
+- **EJS** – Templating engine for dynamic views.
 
-- **Session Management:**
-  - **express-session** – For managing user sessions and keeping users logged in.
-
+### Authentication and Session Management:
+- **bcryptjs** – For securely hashing passwords.
+- **jsonwebtoken (JWT)** – For secure session-less authentication.
 ## **How to Set Up**
 
 ### Prerequisites
