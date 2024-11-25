@@ -23,13 +23,22 @@ app.use(session({
   store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
 }));
 
-// Set EJS as view engine
+
+// Set up EJS as view engine
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.get('/',(req,res)=>{
+// Set up static files (e.g., CSS)
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Body parser middleware to handle form submissions
+app.use(express.urlencoded({ extended: true }));
+
+// Root route to check server status
+app.get('/', (req, res) => {
     return res.send("Server is working!");
-})
-// Routes
+});
+
 app.use('/', authRoutes);
 
 // Server
