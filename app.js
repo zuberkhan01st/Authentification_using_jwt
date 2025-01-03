@@ -1,46 +1,24 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
-const path = require('path');
-const authRoutes = require('./controllers/authController');
-const { connectDB } = require('./config/db');
-
-// Initialize app
+const dotenv = require('dotenv');
+const adminRoutes = require('./routes/adminRoutes');
 const app = express();
 
-// Database connection
-connectDB();
-
-// Middleware
-app.use(express.urlencoded({ extended: true }));
+// Middleware to parse JSON request bodies
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({
-  secret: 'securekey',
-  resave: false,
-  saveUninitialized: false,
-  store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
-}));
 
+// Load environment variables from .env file
+dotenv.config();
 
-// Set up EJS as view engine
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
-// Set up static files (e.g., CSS)
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Body parser middleware to handle form submissions
-app.use(express.urlencoded({ extended: true }));
-
-// Root route to check server status
-app.get('/', (req, res) => {
-    return res.send("Server is working!");
+// Default route to check server status
+app.get('/', async (req, res) => {
+  res.send("Working!!!");
 });
 
-app.use('/', authRoutes);
+// Admin routes
+app.use('/admin', adminRoutes);
 
-// Server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Start the server
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
